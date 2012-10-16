@@ -13,8 +13,5 @@ namespace MyMoviesMVC.Models
         public string Name { get; set; }
         public string Character { get; set; }
     }
-    public class CastDBContext : DbContext
-    {
-        public DbSet<CastPerson> Cast { get; set; }
-    }
+    
 }

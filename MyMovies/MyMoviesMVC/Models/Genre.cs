@@ -13,8 +13,5 @@ namespace MyMoviesMVC.Models
         public string Name { get; set; }
         public string Type { get; set; }
     }
-    public class GenreDBContext : DbContext
-    {
-        public DbSet<Genre> Genres { get; set; }
-    }
+    
 }

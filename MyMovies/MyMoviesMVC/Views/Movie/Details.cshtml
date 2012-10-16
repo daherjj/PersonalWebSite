@@ -1,0 +1,43 @@
+﻿@model MyMoviesMVC.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Movie</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImdbId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImdbId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Runtime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Runtime)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Released)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Released)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
