@@ -14,5 +14,6 @@ namespace MyMoviesMVC.Models
         public DbSet<CastPerson> Cast { get; set; }
         public DbSet<MovieCast> MovieCasts { get; set; }
         public DbSet<MovieGenre> MovieGenres { get; set; }
+        public DbSet<MoviePath> MoviePaths { get; set; }
     }
 }

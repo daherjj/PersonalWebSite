@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44a0d60278464b16856c4b844216dddc" Name="Diagram1">
+        <EntityTypeShape EntityType="MoviesModel.CastPerson" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MoviesModel.Genre" Width="1.5" PointX="7.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MoviesModel.Movie" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MoviesModel.MoviePath" Width="1.5" PointX="10.005458290691236" PointY="7.5055337285183059" />
+        <AssociationConnector Association="MoviesModel.FK_dbo_MoviePaths_dbo_Movies_Movies_Id" />
+        <EntityTypeShape EntityType="MoviesModel.C__MigrationHistory1" Width="1.5" PointX="2.2869283530334608" PointY="5.2318124050422625" />
+        <EntityTypeShape EntityType="MoviesModel.MovieCast" Width="1.5" PointX="7.0711162458505088" PointY="7.5557118093388675" />
+        <EntityTypeShape EntityType="MoviesModel.MovieGenre" Width="1.5" PointX="1.5860170636260964" PointY="9.2210626496100154" />
+        <AssociationConnector Association="MoviesModel.FK_dbo_MovieCasts_dbo_CastPersons_Cast_Id" />
+        <AssociationConnector Association="MoviesModel.FK_dbo_MovieGenres_dbo_Genres_Genres_Id" />
+        <AssociationConnector Association="MoviesModel.FK_dbo_MovieCasts_dbo_Movies_Movies_Id" />
+        <AssociationConnector Association="MoviesModel.FK_dbo_MovieGenres_dbo_Movies_Movies_Id" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

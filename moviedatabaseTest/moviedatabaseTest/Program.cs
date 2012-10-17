@@ -11,7 +11,7 @@ namespace moviedatabaseTest
         static void Main(string[] args)
         {
             TheMovieDb.TmdbApi login = new TheMovieDb.TmdbApi("d49ca7319b09616c927940697304294c");
-            TheMovieDb.TmdbMovie m = login.MovieSearch("2 Broke Girls").FirstOrDefault();
+            TheMovieDb.TmdbMovie m = login.MovieSearch("True Lies").FirstOrDefault();
             TheMovieDb.TmdbMovie movie = login.MovieSearchByImdb(m.ImdbId).FirstOrDefault();
 
             Console.WriteLine("Titile: " + movie.Name );

@@ -129,6 +129,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201210161736454_InitialCreate.cs" />
+    <Compile Include="Migrations\201210161736454_InitialCreate.Designer.cs">
+      <DependentUpon>201210161736454_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201210170049389_AddPathMig.cs" />
+    <Compile Include="Migrations\201210170049389_AddPathMig.Designer.cs">
+      <DependentUpon>201210170049389_AddPathMig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CastPerson.cs" />
     <Compile Include="Models\DBContext.cs" />
     <Compile Include="Models\Genre.cs" />
@@ -246,6 +255,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201210161736454_InitialCreate.resx">
+      <DependentUpon>201210161736454_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201210170049389_AddPathMig.resx">
+      <DependentUpon>201210170049389_AddPathMig.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
