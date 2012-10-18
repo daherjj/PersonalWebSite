@@ -12,9 +12,6 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.ImdbId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
@@ -27,10 +24,7 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImdbId)
-        </td>
+    <tr>        
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
@@ -43,7 +37,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            <a href="http://www.imdb.com/title/@item.ImdbId"    >IMDB</a>
         </td>
     </tr>
 }
