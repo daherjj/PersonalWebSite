@@ -20,13 +20,17 @@
         <th>
             @Html.DisplayNameFor(model => model.Released)
         </th>
+        <th>
+           Genre
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>        
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+           
+            @Html.ActionLink(item.Name, "Details", new { id=item.Id })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Runtime)
@@ -35,8 +39,10 @@
             @Html.DisplayFor(modelItem => item.Released)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+          @{Html.RenderAction("GetMovieGenre","MovieGenre", new { mov = item });}
+           
+        </td>
+        <td>
             <a href="http://www.imdb.com/title/@item.ImdbId"    >IMDB</a>
         </td>
     </tr>

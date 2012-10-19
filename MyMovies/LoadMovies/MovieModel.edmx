@@ -21,18 +21,6 @@
             <End Role="Movies" EntitySet="Movies" />
             <End Role="MovieCasts" EntitySet="MovieCasts" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_MovieGenres_dbo_Genres_Genres_Id" Association="MoviesModel.Store.FK_dbo_MovieGenres_dbo_Genres_Genres_Id">
-            <End Role="Genres" EntitySet="Genres" />
-            <End Role="MovieGenres" EntitySet="MovieGenres" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_MovieGenres_dbo_Movies_Movies_Id" Association="MoviesModel.Store.FK_dbo_MovieGenres_dbo_Movies_Movies_Id">
-            <End Role="Movies" EntitySet="Movies" />
-            <End Role="MovieGenres" EntitySet="MovieGenres" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_MoviePaths_dbo_Movies_Movies_Id" Association="MoviesModel.Store.FK_dbo_MoviePaths_dbo_Movies_Movies_Id">
-            <End Role="Movies" EntitySet="Movies" />
-            <End Role="MoviePaths" EntitySet="MoviePaths" />
-          </AssociationSet>
         </EntityContainer>
         <EntityType Name="__MigrationHistory">
           <Key>
@@ -71,8 +59,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Genres_Id" Type="int" />
-          <Property Name="Movies_Id" Type="int" />
+          <Property Name="Movies_Id" Type="int" Nullable="false" />
+          <Property Name="Genre_ID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="MoviePaths">
           <Key>
@@ -80,7 +68,7 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="path" Type="nvarchar(max)" />
-          <Property Name="Movies_Id" Type="int" />
+          <Property Name="Movies_Id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Movies">
           <Key>
@@ -116,134 +104,51 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_MovieGenres_dbo_Genres_Genres_Id">
-          <End Role="Genres" Type="MoviesModel.Store.Genres" Multiplicity="0..1" />
-          <End Role="MovieGenres" Type="MoviesModel.Store.MovieGenres" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Genres">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MovieGenres">
-              <PropertyRef Name="Genres_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_MovieGenres_dbo_Movies_Movies_Id">
-          <End Role="Movies" Type="MoviesModel.Store.Movies" Multiplicity="0..1" />
-          <End Role="MovieGenres" Type="MoviesModel.Store.MovieGenres" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Movies">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MovieGenres">
-              <PropertyRef Name="Movies_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_MoviePaths_dbo_Movies_Movies_Id">
-          <End Role="Movies" Type="MoviesModel.Store.Movies" Multiplicity="0..1" />
-          <End Role="MoviePaths" Type="MoviesModel.Store.MoviePaths" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Movies">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MoviePaths">
-              <PropertyRef Name="Movies_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MoviesModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="MoviesEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="MoviesModel.C__MigrationHistory" />
           <EntitySet Name="CastPersons" EntityType="MoviesModel.CastPerson" />
           <EntitySet Name="Genres" EntityType="MoviesModel.Genre" />
-          <EntitySet Name="Movies" EntityType="MoviesModel.Movie" />
-          <EntitySet Name="MoviePaths" EntityType="MoviesModel.MoviePath" />
-          <AssociationSet Name="FK_dbo_MoviePaths_dbo_Movies_Movies_Id" Association="MoviesModel.FK_dbo_MoviePaths_dbo_Movies_Movies_Id">
-            <End Role="Movie" EntitySet="Movies" />
-            <End Role="MoviePath" EntitySet="MoviePaths" />
-          </AssociationSet>
-          <EntitySet Name="C__MigrationHistory1" EntityType="MoviesModel.C__MigrationHistory1" />
           <EntitySet Name="MovieCasts" EntityType="MoviesModel.MovieCast" />
           <EntitySet Name="MovieGenres" EntityType="MoviesModel.MovieGenre" />
+          <EntitySet Name="MoviePaths" EntityType="MoviesModel.MoviePath" />
+          <EntitySet Name="Movies" EntityType="MoviesModel.Movie" />
           <AssociationSet Name="FK_dbo_MovieCasts_dbo_CastPersons_Cast_Id" Association="MoviesModel.FK_dbo_MovieCasts_dbo_CastPersons_Cast_Id">
             <End Role="CastPerson" EntitySet="CastPersons" />
             <End Role="MovieCast" EntitySet="MovieCasts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_dbo_MovieGenres_dbo_Genres_Genres_Id" Association="MoviesModel.FK_dbo_MovieGenres_dbo_Genres_Genres_Id">
-            <End Role="Genre" EntitySet="Genres" />
-            <End Role="MovieGenre" EntitySet="MovieGenres" />
           </AssociationSet>
           <AssociationSet Name="FK_dbo_MovieCasts_dbo_Movies_Movies_Id" Association="MoviesModel.FK_dbo_MovieCasts_dbo_Movies_Movies_Id">
             <End Role="Movie" EntitySet="Movies" />
             <End Role="MovieCast" EntitySet="MovieCasts" />
           </AssociationSet>
-          <AssociationSet Name="FK_dbo_MovieGenres_dbo_Movies_Movies_Id" Association="MoviesModel.FK_dbo_MovieGenres_dbo_Movies_Movies_Id">
-            <End Role="Movie" EntitySet="Movies" />
-            <End Role="MovieGenre" EntitySet="MovieGenres" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="CastPerson">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Character" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="MovieCasts" Relationship="MoviesModel.FK_dbo_MovieCasts_dbo_CastPersons_Cast_Id" FromRole="CastPerson" ToRole="MovieCast" />
-        </EntityType>
-        <EntityType Name="Genre">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Type" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="MovieGenres" Relationship="MoviesModel.FK_dbo_MovieGenres_dbo_Genres_Genres_Id" FromRole="Genre" ToRole="MovieGenre" />
-          </EntityType>
-        <EntityType Name="Movie">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="ImdbId" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Runtime" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <Property Name="Released" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="MoviePaths" Relationship="MoviesModel.FK_dbo_MoviePaths_dbo_Movies_Movies_Id" FromRole="Movie" ToRole="MoviePath" />
-          <NavigationProperty Name="MovieCasts" Relationship="MoviesModel.FK_dbo_MovieCasts_dbo_Movies_Movies_Id" FromRole="Movie" ToRole="MovieCast" />
-          <NavigationProperty Name="MovieGenres" Relationship="MoviesModel.FK_dbo_MovieGenres_dbo_Movies_Movies_Id" FromRole="Movie" ToRole="MovieGenre" />
-        </EntityType>
-        <EntityType Name="MoviePath">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="path" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="Movies_Id" />
-          <NavigationProperty Name="Movie" Relationship="MoviesModel.FK_dbo_MoviePaths_dbo_Movies_Movies_Id" FromRole="MoviePath" ToRole="Movie" />
-        </EntityType>
-        <Association Name="FK_dbo_MoviePaths_dbo_Movies_Movies_Id">
-          <End Type="MoviesModel.Movie" Role="Movie" Multiplicity="0..1" />
-          <End Type="MoviesModel.MoviePath" Role="MoviePath" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Movie">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MoviePath">
-              <PropertyRef Name="Movies_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="C__MigrationHistory1">
+        <EntityType Name="C__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
           </Key>
           <Property Type="String" Name="MigrationId" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Type="Binary" Name="Model" Nullable="false" MaxLength="Max" FixedLength="false" />
           <Property Type="String" Name="ProductVersion" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CastPerson">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Character" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MovieCasts" Relationship="MoviesModel.FK_dbo_MovieCasts_dbo_CastPersons_Cast_Id" FromRole="CastPerson" ToRole="MovieCast" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="MovieCast">
           <Key>
@@ -260,10 +165,27 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="Genres_Id" />
-          <Property Type="Int32" Name="Movies_Id" />
-          <NavigationProperty Name="Genre" Relationship="MoviesModel.FK_dbo_MovieGenres_dbo_Genres_Genres_Id" FromRole="MovieGenre" ToRole="Genre" />
-          <NavigationProperty Name="Movie" Relationship="MoviesModel.FK_dbo_MovieGenres_dbo_Movies_Movies_Id" FromRole="MovieGenre" ToRole="Movie" />
+          <Property Type="Int32" Name="Movies_Id" Nullable="false" />
+          <Property Type="Int32" Name="Genre_ID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MoviePath">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="path" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Movies_Id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Movie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ImdbId" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Runtime" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Released" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MovieCasts" Relationship="MoviesModel.FK_dbo_MovieCasts_dbo_Movies_Movies_Id" FromRole="Movie" ToRole="MovieCast" />
         </EntityType>
         <Association Name="FK_dbo_MovieCasts_dbo_CastPersons_Cast_Id">
           <End Type="MoviesModel.CastPerson" Role="CastPerson" Multiplicity="0..1" />
@@ -274,18 +196,6 @@
             </Principal>
             <Dependent Role="MovieCast">
               <PropertyRef Name="Cast_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_dbo_MovieGenres_dbo_Genres_Genres_Id">
-          <End Type="MoviesModel.Genre" Role="Genre" Multiplicity="0..1" />
-          <End Type="MoviesModel.MovieGenre" Role="MovieGenre" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Genre">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MovieGenre">
-              <PropertyRef Name="Genres_Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -301,68 +211,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_dbo_MovieGenres_dbo_Movies_Movies_Id">
-          <End Type="MoviesModel.Movie" Role="Movie" Multiplicity="0..1" />
-          <End Type="MoviesModel.MovieGenre" Role="MovieGenre" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Movie">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="MovieGenre">
-              <PropertyRef Name="Movies_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
     <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="MoviesModelStoreContainer" CdmEntityContainer="MoviesEntities">
-    <EntitySetMapping Name="CastPersons">
-      <EntityTypeMapping TypeName="IsTypeOf(MoviesModel.CastPerson)">
-        <MappingFragment StoreEntitySet="CastPersons">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Character" ColumnName="Character" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Genres">
-      <EntityTypeMapping TypeName="IsTypeOf(MoviesModel.Genre)">
-        <MappingFragment StoreEntitySet="Genres">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Type" ColumnName="Type" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Movies">
-      <EntityTypeMapping TypeName="IsTypeOf(MoviesModel.Movie)">
-        <MappingFragment StoreEntitySet="Movies">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="ImdbId" ColumnName="ImdbId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Runtime" ColumnName="Runtime" />
-          <ScalarProperty Name="Released" ColumnName="Released" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MoviePaths">
-      <EntityTypeMapping TypeName="IsTypeOf(MoviesModel.MoviePath)">
-        <MappingFragment StoreEntitySet="MoviePaths">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="path" ColumnName="path" />
-          <ScalarProperty Name="Movies_Id" ColumnName="Movies_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-          <EntitySetMapping Name="C__MigrationHistory1">
-            <EntityTypeMapping TypeName="MoviesModel.C__MigrationHistory1">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="MoviesModel.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">
                 <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
                 <ScalarProperty Name="Model" ColumnName="Model" />
                 <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CastPersons">
+            <EntityTypeMapping TypeName="MoviesModel.CastPerson">
+              <MappingFragment StoreEntitySet="CastPersons">
+                <ScalarProperty Name="Character" ColumnName="Character" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genres">
+            <EntityTypeMapping TypeName="MoviesModel.Genre">
+              <MappingFragment StoreEntitySet="Genres">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -378,13 +256,33 @@
           <EntitySetMapping Name="MovieGenres">
             <EntityTypeMapping TypeName="MoviesModel.MovieGenre">
               <MappingFragment StoreEntitySet="MovieGenres">
+                <ScalarProperty Name="Genre_ID" ColumnName="Genre_ID" />
                 <ScalarProperty Name="Movies_Id" ColumnName="Movies_Id" />
-                <ScalarProperty Name="Genres_Id" ColumnName="Genres_Id" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-  </EntityContainerMapping>
+          <EntitySetMapping Name="MoviePaths">
+            <EntityTypeMapping TypeName="MoviesModel.MoviePath">
+              <MappingFragment StoreEntitySet="MoviePaths">
+                <ScalarProperty Name="Movies_Id" ColumnName="Movies_Id" />
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movies">
+            <EntityTypeMapping TypeName="MoviesModel.Movie">
+              <MappingFragment StoreEntitySet="Movies">
+                <ScalarProperty Name="Released" ColumnName="Released" />
+                <ScalarProperty Name="Runtime" ColumnName="Runtime" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ImdbId" ColumnName="ImdbId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->

@@ -12,7 +12,7 @@ namespace LoadMovies
     using System;
     using System.Collections.Generic;
     
-    public partial class C__MigrationHistory1
+    public partial class C__MigrationHistory
     {
         public string MigrationId { get; set; }
         public byte[] Model { get; set; }

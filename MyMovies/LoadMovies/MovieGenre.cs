@@ -15,10 +15,7 @@ namespace LoadMovies
     public partial class MovieGenre
     {
         public int Id { get; set; }
-        public Nullable<int> Genres_Id { get; set; }
-        public Nullable<int> Movies_Id { get; set; }
-    
-        public virtual Genre Genre { get; set; }
-        public virtual Movie Movie { get; set; }
+        public int Movies_Id { get; set; }
+        public int Genre_ID { get; set; }
     }
 }

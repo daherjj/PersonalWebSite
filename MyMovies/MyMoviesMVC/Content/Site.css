@@ -586,6 +586,12 @@ tr.pager td {
     padding: 0 0.25em 0 0;
 }
 
+#inlineGenre li {
+    display:inline;
+    list-style-type: none;
+
+}
+
 
 /********************
 *   Mobile Styles   *

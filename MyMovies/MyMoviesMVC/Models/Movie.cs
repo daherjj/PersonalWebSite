@@ -20,8 +20,8 @@ namespace MyMoviesMVC.Models
     public class MovieGenre
     {
         public int Id { get; set; }
-        public Genre Genres { get; set; }
-        public Movie Movies { get; set; }
+        public int Genre_ID { get; set; }
+        public int Movies_ID { get; set; }
     }
     public class MovieCast
     {
@@ -32,7 +32,7 @@ namespace MyMoviesMVC.Models
     public class MoviePath
     {
         public int Id { get; set; }
-        public Movie Movies { get; set; }
+        public int Movies_ID { get; set; }
         public string path { get; set; }
     }
 

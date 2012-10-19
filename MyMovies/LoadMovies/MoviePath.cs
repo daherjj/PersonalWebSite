@@ -16,8 +16,6 @@ namespace LoadMovies
     {
         public int Id { get; set; }
         public string path { get; set; }
-        public Nullable<int> Movies_Id { get; set; }
-    
-        public virtual Movie Movie { get; set; }
+        public int Movies_Id { get; set; }
     }
 }

@@ -126,6 +126,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\MovieGenreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -136,6 +137,10 @@
     <Compile Include="Migrations\201210170049389_AddPathMig.cs" />
     <Compile Include="Migrations\201210170049389_AddPathMig.Designer.cs">
       <DependentUpon>201210170049389_AddPathMig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201210182316353_AddMovieGenre.cs" />
+    <Compile Include="Migrations\201210182316353_AddMovieGenre.Designer.cs">
+      <DependentUpon>201210182316353_AddMovieGenre.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CastPerson.cs" />
@@ -252,6 +257,8 @@
     <Content Include="Views\Movie\Create.cshtml" />
     <Content Include="Views\Movie\Edit.cshtml" />
     <Content Include="Views\Movie\Delete.cshtml" />
+    <Content Include="Views\MovieGenre\GetMovieGenre.cshtml" />
+    <Content Include="Views\Shared\GetMovieGenre.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -262,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201210170049389_AddPathMig.resx">
       <DependentUpon>201210170049389_AddPathMig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201210182316353_AddMovieGenre.resx">
+      <DependentUpon>201210182316353_AddMovieGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

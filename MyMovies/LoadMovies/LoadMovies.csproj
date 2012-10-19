@@ -52,7 +52,7 @@
     <Compile Include="CastPerson.cs">
       <DependentUpon>MovieModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="C__MigrationHistory1.cs">
+    <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>MovieModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Genre.cs">

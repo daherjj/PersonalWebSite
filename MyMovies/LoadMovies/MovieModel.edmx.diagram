@@ -5,18 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="44a0d60278464b16856c4b844216dddc" Name="Diagram1">
-        <EntityTypeShape EntityType="MoviesModel.CastPerson" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoviesModel.Genre" Width="1.5" PointX="7.625" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoviesModel.Movie" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MoviesModel.MoviePath" Width="1.5" PointX="10.005458290691236" PointY="7.5055337285183059" />
-        <AssociationConnector Association="MoviesModel.FK_dbo_MoviePaths_dbo_Movies_Movies_Id" />
-        <EntityTypeShape EntityType="MoviesModel.C__MigrationHistory1" Width="1.5" PointX="2.2869283530334608" PointY="5.2318124050422625" />
-        <EntityTypeShape EntityType="MoviesModel.MovieCast" Width="1.5" PointX="7.0711162458505088" PointY="7.5557118093388675" />
-        <EntityTypeShape EntityType="MoviesModel.MovieGenre" Width="1.5" PointX="1.5860170636260964" PointY="9.2210626496100154" />
+        <EntityTypeShape EntityType="MoviesModel.C__MigrationHistory" Width="1.5" PointX="0.43515387942788841" PointY="14.248271769959606" />
+        <EntityTypeShape EntityType="MoviesModel.CastPerson" Width="1.5" PointX="1.2006442459303162" PointY="2.7634054733269875" />
+        <EntityTypeShape EntityType="MoviesModel.Genre" Width="1.5" PointX="4.8779272254919288" PointY="20.827620009345758" />
+        <EntityTypeShape EntityType="MoviesModel.MovieCast" Width="1.5" PointX="0.61236076271737039" PointY="10.297154356863887" />
+        <EntityTypeShape EntityType="MoviesModel.MovieGenre" Width="1.5" PointX="6.7374875036708488" PointY="23.081695701499328" />
+        <EntityTypeShape EntityType="MoviesModel.MoviePath" Width="1.5" PointX="1.8619906445322516" PointY="12.632282262962443" />
+        <EntityTypeShape EntityType="MoviesModel.Movie" Width="1.5" PointX="6.3852077025851273" PointY="4.2127663065738821" />
         <AssociationConnector Association="MoviesModel.FK_dbo_MovieCasts_dbo_CastPersons_Cast_Id" />
-        <AssociationConnector Association="MoviesModel.FK_dbo_MovieGenres_dbo_Genres_Genres_Id" />
         <AssociationConnector Association="MoviesModel.FK_dbo_MovieCasts_dbo_Movies_Movies_Id" />
-        <AssociationConnector Association="MoviesModel.FK_dbo_MovieGenres_dbo_Movies_Movies_Id" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -81,7 +81,7 @@ namespace LoadMovies
                         foreach (TmdbGenre genreData in MovieData.Genres)
                         {
                             MovieGenre mg = new MovieGenre();
-                            mg.Genres_Id = dbContext.Genres.FirstOrDefault(g => g.Name == genreData.Name).Id;
+                            mg.Genre_ID = dbContext.Genres.FirstOrDefault(g => g.Name == genreData.Name).Id;
                             mg.Movies_Id = currentMovie.Id;
                             dbContext.MovieGenres.Add(mg);
                             dbContext.SaveChanges();

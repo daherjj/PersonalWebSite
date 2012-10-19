@@ -16,9 +16,7 @@ namespace LoadMovies
     {
         public Movie()
         {
-            this.MoviePaths = new HashSet<MoviePath>();
             this.MovieCasts = new HashSet<MovieCast>();
-            this.MovieGenres = new HashSet<MovieGenre>();
         }
     
         public int Id { get; set; }
@@ -27,8 +25,6 @@ namespace LoadMovies
         public string Runtime { get; set; }
         public string Released { get; set; }
     
-        public virtual ICollection<MoviePath> MoviePaths { get; set; }
         public virtual ICollection<MovieCast> MovieCasts { get; set; }
-        public virtual ICollection<MovieGenre> MovieGenres { get; set; }
     }
 }

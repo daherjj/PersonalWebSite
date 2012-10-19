@@ -18,7 +18,7 @@ namespace MyMoviesMVC.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Movies.ToList());
+            return View(db.Movies.OrderBy(m => m.Name).ToList());
         }
 
         //

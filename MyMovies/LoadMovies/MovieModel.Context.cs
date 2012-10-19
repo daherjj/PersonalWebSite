@@ -25,12 +25,12 @@ namespace LoadMovies
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public DbSet<CastPerson> CastPersons { get; set; }
         public DbSet<Genre> Genres { get; set; }
-        public DbSet<Movie> Movies { get; set; }
-        public DbSet<MoviePath> MoviePaths { get; set; }
-        public DbSet<C__MigrationHistory1> C__MigrationHistory1 { get; set; }
         public DbSet<MovieCast> MovieCasts { get; set; }
         public DbSet<MovieGenre> MovieGenres { get; set; }
+        public DbSet<MoviePath> MoviePaths { get; set; }
+        public DbSet<Movie> Movies { get; set; }
     }
 }
