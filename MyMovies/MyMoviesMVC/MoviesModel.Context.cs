@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LoadMovies
+namespace MyMoviesMVC
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MoviesEntities : DbContext
+    public partial class MoviesDBContext : DbContext
     {
-        public MoviesEntities()
-            : base("name=MoviesEntities")
+        public MoviesDBContext()
+            : base("name=MoviesDBContext")
         {
         }
     

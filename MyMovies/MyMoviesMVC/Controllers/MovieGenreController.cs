@@ -18,9 +18,9 @@ namespace MyMoviesMVC.Controllers
         {
             return View();
         }
-        public PartialViewResult GetMovieGenre(Movie mov)
+        public PartialViewResult GetMovieGenre(int id = 0)
         {
-            List<MovieGenre> mgs = db.MovieGenres.Where(m => m.Movies_ID == mov.Id).ToList();
+            List<MovieGenre> mgs = db.MovieGenres.Where(m => m.Movies_ID == id).ToList();
             List<Genre> gs = new List<Genre>();
             foreach(MovieGenre mg in mgs)
             {

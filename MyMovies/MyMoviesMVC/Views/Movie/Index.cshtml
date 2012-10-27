@@ -30,7 +30,7 @@
     <tr>        
         <td>
            
-            @Html.ActionLink(item.Name, "Details", new { id=item.Id })
+            @Html.ActionLink(item.Name, "Details", new { id = item.Id })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Runtime)
@@ -39,7 +39,7 @@
             @Html.DisplayFor(modelItem => item.Released)
         </td>
         <td>
-          @{Html.RenderAction("GetMovieGenre","MovieGenre", new { mov = item });}
+          @{Html.RenderAction("GetMovieGenre","MovieGenre", new { id = item.Id });}
            
         </td>
         <td>

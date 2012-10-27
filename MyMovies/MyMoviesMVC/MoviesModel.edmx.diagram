@@ -4,8 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="44a0d60278464b16856c4b844216dddc" Name="Diagram1">
-      </Diagram>
+      <Diagram DiagramId="51b7a7e6a7754670b824140efb0f6e94" Name="Diagram1" />
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

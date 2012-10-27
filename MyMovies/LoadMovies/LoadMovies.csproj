@@ -49,25 +49,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CastPerson.cs">
-      <DependentUpon>MovieModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="C__MigrationHistory.cs">
-      <DependentUpon>MovieModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Genre.cs">
-      <DependentUpon>MovieModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="LoadMovies.cs" />
-    <Compile Include="Movie.cs">
-      <DependentUpon>MovieModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MovieCast.cs">
-      <DependentUpon>MovieModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MovieGenre.cs">
-      <DependentUpon>MovieModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="MovieModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -82,9 +64,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MovieModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="MoviePath.cs">
-      <DependentUpon>MovieModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility.cs" />

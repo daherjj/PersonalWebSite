@@ -1,0 +1,14 @@
+﻿@model IEnumerable<MyMoviesMVC.Models.MoviePath>
+
+
+<div class="pathList">
+<ul>
+@foreach (var item in Model)
+{  
+    <li>
+        @item.path
+        <button type="button" onclick="openWindow('@item.path')">Open</button>
+    </li>
+}
+    </ul>
+</div>

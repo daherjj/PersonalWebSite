@@ -44,6 +44,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -127,26 +129,42 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\MovieGenreController.cs" />
+    <Compile Include="Controllers\PathsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201210161736454_InitialCreate.cs" />
-    <Compile Include="Migrations\201210161736454_InitialCreate.Designer.cs">
-      <DependentUpon>201210161736454_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201210161652387_InitialCreate.cs" />
+    <Compile Include="Migrations\201210161652387_InitialCreate.Designer.cs">
+      <DependentUpon>201210161652387_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201210170049389_AddPathMig.cs" />
-    <Compile Include="Migrations\201210170049389_AddPathMig.Designer.cs">
-      <DependentUpon>201210170049389_AddPathMig.cs</DependentUpon>
+    <Compile Include="Migrations\201210271716381_AddUpdate.cs" />
+    <Compile Include="Migrations\201210271716381_AddUpdate.Designer.cs">
+      <DependentUpon>201210271716381_AddUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201210182316353_AddMovieGenre.cs" />
-    <Compile Include="Migrations\201210182316353_AddMovieGenre.Designer.cs">
-      <DependentUpon>201210182316353_AddMovieGenre.cs</DependentUpon>
+    <Compile Include="Migrations\201210271727392_AddUpdate1.cs" />
+    <Compile Include="Migrations\201210271727392_AddUpdate1.Designer.cs">
+      <DependentUpon>201210271727392_AddUpdate1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CastPerson.cs" />
     <Compile Include="Models\DBContext.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="MoviesModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MoviesModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MoviesModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MoviesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MoviesModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MoviesModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -206,6 +224,24 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <EntityDeploy Include="MoviesModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MoviesModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="MoviesModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MoviesModel.edmx</DependentUpon>
+      <LastGenOutput>MoviesModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="MoviesModel.edmx.diagram">
+      <DependentUpon>MoviesModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="MoviesModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MoviesModel.edmx</DependentUpon>
+      <LastGenOutput>MoviesModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\MyMoviesProfile.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -258,20 +294,29 @@
     <Content Include="Views\Movie\Edit.cshtml" />
     <Content Include="Views\Movie\Delete.cshtml" />
     <Content Include="Views\MovieGenre\GetMovieGenre.cshtml" />
-    <Content Include="Views\Shared\GetMovieGenre.cshtml" />
+    <Content Include="Views\Paths\Index.cshtml" />
+    <Content Include="Views\Paths\Details.cshtml" />
+    <Content Include="Views\Paths\Create.cshtml" />
+    <Content Include="Views\Paths\Edit.cshtml" />
+    <Content Include="Views\Paths\Delete.cshtml" />
+    <Content Include="Views\Paths\GetMoviePaths.cshtml" />
+    <Content Include="Views\Paths\MoviePlayer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201210161736454_InitialCreate.resx">
-      <DependentUpon>201210161736454_InitialCreate.cs</DependentUpon>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201210161652387_InitialCreate.resx">
+      <DependentUpon>201210161652387_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201210170049389_AddPathMig.resx">
-      <DependentUpon>201210170049389_AddPathMig.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201210271716381_AddUpdate.resx">
+      <DependentUpon>201210271716381_AddUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201210182316353_AddMovieGenre.resx">
-      <DependentUpon>201210182316353_AddMovieGenre.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201210271727392_AddUpdate1.resx">
+      <DependentUpon>201210271727392_AddUpdate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -11,7 +11,7 @@ namespace MyMoviesMVC.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201210161736454_InitialCreate"; }
+            get { return "201210161652387_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

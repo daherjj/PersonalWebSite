@@ -5,13 +5,13 @@ namespace MyMoviesMVC.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class AddPathMig : IMigrationMetadata
+    public sealed partial class AddUpdate1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddPathMig));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddUpdate1));
         
         string IMigrationMetadata.Id
         {
-            get { return "201210170049389_AddPathMig"; }
+            get { return "201210271727392_AddUpdate1"; }
         }
         
         string IMigrationMetadata.Source

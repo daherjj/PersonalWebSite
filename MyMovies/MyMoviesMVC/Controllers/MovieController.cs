@@ -12,7 +12,7 @@ namespace MyMoviesMVC.Controllers
     public class MovieController : Controller
     {
         private MovieDBContext db = new MovieDBContext();
-
+        Mov
         //
         // GET: /Movie/
 
@@ -33,6 +33,13 @@ namespace MyMoviesMVC.Controllers
             }
             return View(movie);
         }
+
+        //[HttpPost]
+        //public ActionResult Details(Movie movie)
+        //{
+            
+        //    return View(movie);
+        //}
 
         //
         // GET: /Movie/Create
