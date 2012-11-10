@@ -1,0 +1,18 @@
+﻿@model MyMovies.Episode
+
+
+ @{
+     
+     var epStr = Model.Episode1.ToString();
+     if(epStr.Count() == 1)
+     {
+         epStr = "0" + epStr;
+     }
+     var str = Model.Season + "x" + epStr;
+     
+     }
+    @str
+ 
+        
+       
+ 

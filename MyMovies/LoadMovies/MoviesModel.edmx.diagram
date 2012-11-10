@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="35256d8a8e7542a5a2fabe3219e5fe31" Name="Diagram1">
+        <EntityTypeShape EntityType="MyMoviesModel.Genre" Width="1.5" PointX="10.92255747081831" PointY="2.5918531429915936" />
+        <EntityTypeShape EntityType="MyMoviesModel.MovieGenre" Width="1.5" PointX="3.5888737829350283" PointY="26.377230611805444" />
+        <EntityTypeShape EntityType="MyMoviesModel.Movie" Width="1.5" PointX="2.0460657039871744" PointY="6.659293028833015" />
+        <EntityTypeShape EntityType="MyMoviesModel.MoviePath" Width="1.5" PointX="1.1451688432810683" PointY="26.4956452224849" />
+        <EntityTypeShape EntityType="MyMoviesModel.sysdiagram" Width="1.5" PointX="0.020896693701342072" PointY="31.517355575932822" />
+        <AssociationConnector Association="MyMoviesModel.FK_MovieGenres_Genres" />
+        <AssociationConnector Association="MyMoviesModel.FK_MovieGenres_Movies" />
+        <AssociationConnector Association="MyMoviesModel.FK_MoviePath_Movies" />
+        <EntityTypeShape EntityType="MyMoviesModel.Episode" Width="1.5" PointX="7.2891956303684022" PointY="19.073047080576906" />
+        <EntityTypeShape EntityType="MyMoviesModel.Show" Width="1.5" PointX="1.2863838902145548" PointY="25.1031533298563" />
+        <AssociationConnector Association="MyMoviesModel.FK_Episodes_Shows" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MyMovies.Show>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            Latest Episode
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+           @{Html.RenderAction("GetLatestEpisode", "Show", new {id =  item.Id });}
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id })|
+             <a href="@item.NewzbinSearch" target="_blank" >Newzbin</a>
+            
+        </td>
+    </tr>
+}
+
+</table>
